@@ -10,8 +10,8 @@ costeTotal = alojamiento + alimentacion + entretenimiento;
 
 if (costeTotal % 1 == 0) { 
   alert("El coste total del viaje es: " + costeTotal + "€.");
-  console.log("El coste total del viaje es: " + costeTotal + "€.")
+  console.log("El coste total del viaje es: " + costeTotal + "€.");
 } else {
   alert("El coste total del viaje es: " + costeTotal.toFixed(2) + "€.");
-  console.log("El coste total del viaje es: " + costeTotal.toFixed(2) + "€.")
+  console.log("El coste total del viaje es: " + costeTotal.toFixed(2) + "€.");
 }
