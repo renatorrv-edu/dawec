@@ -23,3 +23,5 @@ for (let i = comienzo; i <= final; i++) {
 }
 
 console.log(numerosPrimos);
+
+//Revisar y rehacer.
