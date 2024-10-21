@@ -16,3 +16,5 @@ function colorBlanco() {
   let div2_2 = document.getElementById('efecto');
   div2_2.style.background = '#FFFFFF';
 }
+
+//Prueba.
