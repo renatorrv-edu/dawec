@@ -36,4 +36,6 @@ function calcular(n, m) {
 // Incluído en el HTML.
 
 // Ejercicio 5
+//Incluído en el HTML.
 
+// Ejercicio 6

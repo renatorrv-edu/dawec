@@ -7,7 +7,19 @@
   <link rel="stylesheet" href="style.css">
   <title>Ejercicios JavaScript 3</title>
   <script>
+    window.addEventListener('load', () => {
+      let div4_cuadrado = document.getElementById('cuadro');
+      
+      div4_cuadrado.addEventListener('mouseover', () => {
+        div4_cuadrado.style.background = '#FF0000';
+        div4_cuadrado.style.color = '#FFFFFF';
+      })
 
+      div4_cuadrado.addEventListener('mouseleave', () => {
+        div4_cuadrado.style.background = '#FFFFFF';
+        div4_cuadrado.style.color = '#000000';
+      })
+    });
   </script>
 </head>
 <body>
@@ -34,7 +46,29 @@
   </div>
   <h1>Ejercicio 4</h1>
   <div style="display: block; width: 100px; height: 100px;" id="cuadro">
-    Cuadro que cambia al entrar el ratón
+    <b>Cuadro que cambia al entrar el ratón</b>
   </div>
+  <h1>Ejercicio 5</h1>
+  <div id="boton1" class="boton">Pulsar aquí</div>
+  <div id="boton2" class="boton">Pulsar aquí</div>
+  <h1>Ejercicio 6</h1>
+  <div>
+    <label>Coordenada X</label>
+    <input id="cX"> </div>
+    <label>Coordenada Y</label>
+    <input id="cY"> </div>
+  </div>
+  <script>
+    //Vi en StackOverflow que podía acotarse todo en una sola línea y quise probarlo.
+    document.getElementById('boton1').addEventListener('click', pulsar);
+    document.getElementById('boton2').addEventListener('click', pulsar);
+
+    function pulsar (event) {
+      let idBoton = event.target.id;
+
+      alert('Has pulsado en ' + idBoton + '.');
+      console.log('Has pulsado en ' + idBoton + '.');
+    }
+  </script>
 </body>
 </html>
