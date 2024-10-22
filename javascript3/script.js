@@ -65,3 +65,28 @@ div7_c2.addEventListener('mouseenter', function(event) {
     div7_c2.style.backgroundColor = "white";
   }
 })
+
+// Ejercicio 8
+
+let div8_ficha1 = document.getElementById('ficha1');
+let div8_ficha2 = document.getElementById('ficha2');
+let div8_ficha3 = document.getElementById('ficha3');
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === '1') {
+    div8_ficha2.classList.remove("visible");
+    div8_ficha3.classList.remove("visible");
+    div8_ficha1.classList.toggle("visible");
+    div8_ficha1.style.backgroundColor = "#C1E1C1";
+  } else if (event.key === '2') {
+    div8_ficha1.classList.remove("visible");
+    div8_ficha3.classList.remove("visible");
+    div8_ficha2.classList.toggle("visible");
+    div8_ficha2.style.backgroundColor = "#FAA0A0";
+  } else if (event.key === '3') {
+    div8_ficha1.classList.remove("visible");
+    div8_ficha2.classList.remove("visible");
+    div8_ficha3.classList.toggle("visible");
+    div8_ficha3.style.backgroundColor = "#A7C7E7";
+  }
+})

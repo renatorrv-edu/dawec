@@ -25,3 +25,15 @@ h1 {
   width: 100px; 
   height:100px;
 }
+
+.oculto {
+  display: none;
+}
+
+.visible {
+  display: block;
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  text-align: center;
+}
