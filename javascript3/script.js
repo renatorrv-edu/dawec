@@ -39,3 +39,29 @@ function calcular(n, m) {
 //Incluído en el HTML.
 
 // Ejercicio 6
+
+document.addEventListener('mousemove', function(event) {
+  let x = event.screenX;
+  let y = event.screenY;
+
+  document.getElementById('cX').value = x;
+  document.getElementById('cY').value = y;
+})
+
+// Ejercicio 7
+
+let div7_c1 = document.getElementById('c1');
+let div7_c2 = document.getElementById('c2');
+let div7_c3 = document.getElementById('c3');
+
+div7_c2.addEventListener('mouseenter', function(event) {
+  let elementoAnterior = event.relatedTarget;
+
+  if (elementoAnterior === div7_c1) {
+    div7_c2.style.backgroundColor = "red";
+  } else if (elementoAnterior === div7_c3) {
+    div7_c2.style.backgroundColor = "blue";
+  } else {
+    div7_c2.style.backgroundColor = "white";
+  }
+})
