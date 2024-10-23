@@ -41,8 +41,8 @@ function calcular(n, m) {
 // Ejercicio 6
 
 document.addEventListener('mousemove', function(event) {
-  let x = event.screenX;
-  let y = event.screenY;
+  let x = event.pageX;
+  let y = event.pageY;
 
   document.getElementById('cX').value = x;
   document.getElementById('cY').value = y;
@@ -90,3 +90,6 @@ document.addEventListener('keydown', function(event) {
     div8_ficha3.style.backgroundColor = "#A7C7E7";
   }
 })
+
+// Ejercicio 9
+
