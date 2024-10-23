@@ -41,8 +41,8 @@ function calcular(n, m) {
 // Ejercicio 6
 
 document.addEventListener('mousemove', function(event) {
-  let x = event.pageX;
-  let y = event.pageY;
+  let x = event.clientX;
+  let y = event.clientY;
 
   document.getElementById('cX').value = x;
   document.getElementById('cY').value = y;
@@ -93,3 +93,18 @@ document.addEventListener('keydown', function(event) {
 
 // Ejercicio 9
 
+let div9_boton = document.getElementById('boton');
+
+
+
+// Ejercicio 10
+
+let div10_input = document.getElementById('letras');
+
+div10_input.addEventListener('input', function() {
+  //La expresión regular /\d+/ hace referencia a todos los dígitos.
+  if (/\d+/.test(div10_input.value)) {
+    alert("No se pueden introducir dígitos.");
+    div10_input.value = div10_input.value.slice(0, -1);
+  }
+})
