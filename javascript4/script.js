@@ -5,7 +5,7 @@ let frases_informatica = ['No hay bugs, solo características no documentadas.',
   'La primera regla de la programación: si funciona, no lo toques.',
   '- "¿Sabes cuánto es 101 en binario?"\n- "5."\n- "Por el culo te la hinco."',
   'La inteligencia artificial no es rival para la estupidez natural.',
-  'En caso de duda, utiliza "Brute Force"'];
+  'En caso de duda, utiliza "Brute Force."'];
 
 colores = [
   "#ff0000", // Rojo
@@ -34,7 +34,10 @@ let ej1Boton = document.getElementById('ver-mas-boton');
 
 ej1Boton.addEventListener('click', function() {
   texto = document.getElementById('texto-informatica');
-  texto.innerHTML = frases_informatica[Math.floor(Math.random() * frases_informatica.length)]
-  texto.style.color = colores[Math.floor(Math.random() * colores.length)]
-  // ej1Boton.style.color = 
+  texto.innerHTML = frases_informatica[Math.floor(Math.random() * frases_informatica.length)];
+  texto.style.color = colores[Math.floor(Math.random() * colores.length)];
+  ej1Boton.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
 });
+
+// Ejercicio 3
+
