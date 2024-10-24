@@ -93,9 +93,15 @@ document.addEventListener('keydown', function(event) {
 
 // Ejercicio 9
 
-let div9_boton = document.getElementById('boton');
+window.onscroll = function() {
+  let div9_boton = document.getElementById('boton');
 
-
+  if (window.scrollY > window.innerHeight * 10 / 100) {
+    div9_boton.style.display = "block";
+  } else {
+    div9_boton.style.display = "none";
+  }
+}
 
 // Ejercicio 10
 

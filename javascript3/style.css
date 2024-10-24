@@ -43,5 +43,6 @@ h1 {
 #boton { 
   position: absolute; 
   display: none;
+  top: 50%;
   left: 50%;
 }
