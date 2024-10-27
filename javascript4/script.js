@@ -5,7 +5,7 @@ let frases_informatica = ['No hay bugs, solo características no documentadas.',
   'La primera regla de la programación: si funciona, no lo toques.',
   '- "¿Sabes cuánto es 101 en binario?"\n- "5."\n- "Por el culo te la hinco."',
   'La inteligencia artificial no es rival para la estupidez natural.',
-  'En caso de duda, utiliza "Brute Force."'];
+  'En caso de duda, utiliza "Brute Force".'];
 
 colores = [
   "#ff0000", // Rojo
@@ -41,3 +41,15 @@ ej1Boton.addEventListener('click', function() {
 
 // Ejercicio 3
 
+let ej3Input = document.getElementById('newItemInput');
+let ej3Boton = document.getElementById('addItemBtn');
+let ej3Lista = document.getElementById('itemsList');
+
+ej3Boton.addEventListener('click', function() {
+  if (ej3Input.value) {
+    ej3Lista.innerHTML += `<li>${ej3Input.value}</li>`;
+    ej3Input.value = "";
+  } else {
+    alert("El campo de 'nuevo ítem' se encuentra vacío. Por favor, añade algo.")
+  }
+})
