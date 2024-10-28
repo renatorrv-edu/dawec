@@ -46,9 +46,36 @@ let ej3Boton = document.getElementById('addItemBtn');
 let ej3Lista = document.getElementById('itemsList');
 
 ej3Boton.addEventListener('click', function() {
-  if (ej3Input.value) {
-    ej3Lista.innerHTML += `<li>${ej3Input.value}</li>`;
+  if (ej3Input.value.trim() !== "") { //value.trim() comprobará que el input no consista únicamente de espacios en blanco. De esta forma nos aseguramos de que haya texto.
+    let li = document.createElement('li');
+    li.textContent = ej3Input.value;
+
+    let btnContainer = document.createElement('div');
+    btnContainer.className = "btnContainer"
+
+    let completeBtn = document.createElement('button');
+    completeBtn.className = 'completeBtn';
+    completeBtn.innerHTML = '<img src="img/check.png" alt="Completar tarea" title="Completar tarea">';
+
+    let deleteBtn = document.createElement('button');
+    deleteBtn.className = 'deleteBtn';
+    deleteBtn.innerHTML = '<img src="img/delete.png" alt="Borrar tarea" title="Borrar tarea">';
+
+    btnContainer.appendChild(completeBtn);
+    btnContainer.appendChild(deleteBtn);
+    li.appendChild(btnContainer);
+
+    ej3Lista.appendChild(li);
+
     ej3Input.value = "";
+
+    completeBtn.addEventListener('click', function() {
+      li.classList.toggle('completed');
+    })
+
+    deleteBtn.addEventListener('click', function() {
+      ej3Lista.removeChild(li);
+    })
   } else {
     alert("El campo de 'nuevo ítem' se encuentra vacío. Por favor, añade algo.")
   }

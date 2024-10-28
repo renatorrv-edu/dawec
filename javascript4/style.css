@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 #contenido-informatica {
@@ -94,6 +94,7 @@ li {
   border-bottom: 1px solid #eee;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 li:last-child {
@@ -103,6 +104,11 @@ li:last-child {
 .completed {
   text-decoration: line-through;
   color: #999;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .completeBtn, .deleteBtn {
@@ -129,17 +135,4 @@ li:last-child {
 
 .deleteBtn {
   order: 3;
-}
-
-.btnCheck, .btnDel {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.btnContainer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
 }
