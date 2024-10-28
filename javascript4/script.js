@@ -77,6 +77,27 @@ ej3Boton.addEventListener('click', function() {
       ej3Lista.removeChild(li);
     })
   } else {
-    alert("El campo de 'nuevo ítem' se encuentra vacío. Por favor, añade algo.")
+    alert("El campo de 'nuevo ítem' se encuentra vacío. Por favor, añade algo.");
   }
 })
+
+// Ejercicio 4
+
+function toggleBox() {
+  let toggleBtn = document.getElementById('toggleBtn');
+  let box = document.getElementById('box');
+
+  if (box.style.display === "none") {
+    toggleBtn.innerHTML = "Mostrar Caja";
+    box.style.display = "block";
+  } else {
+    toggleBtn.innerHTML = "Ocultar Caja";
+    box.style.display = "none";
+  }
+}
+
+let toggleBtn = document.getElementById('toggleBtn');
+toggleBtn.addEventListener('click', toggleBox);
+
+// Ejercicio 5
+
