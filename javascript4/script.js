@@ -87,12 +87,12 @@ function toggleBox() {
   let toggleBtn = document.getElementById('toggleBtn');
   let box = document.getElementById('box');
 
-  if (box.style.display === "none") {
-    toggleBtn.innerHTML = "Mostrar Caja";
+  if (box.style.display === "none" || box.style.display === "") {
     box.style.display = "block";
-  } else {
     toggleBtn.innerHTML = "Ocultar Caja";
+  } else {
     box.style.display = "none";
+    toggleBtn.innerHTML = "Mostrar Caja";
   }
 }
 
@@ -128,3 +128,56 @@ function addTask() {
 }
 
 ej5Btn.addEventListener('click', addTask);
+
+// Ejercicio 6
+
+let ej6Input = document.getElementById('inputName');
+let ej6Btn = document.getElementById('addBtn');
+let ej6Lista = document.getElementById('nameList');
+let ej6Random = document.getElementById('randomBtn');
+let ej6Name = document.getElementById('selectedName')
+let listaNombres = [];
+
+function addName() {
+  if (ej6Input.value.trim() !== "") {
+    listaNombres.push(ej6Input.value);
+
+    let li = document.createElement('li');
+    li.textContent = ej6Input.value;
+
+    ej6Lista.appendChild(li)
+
+    ej6Input.value = "";
+  } else {
+    alert("El campo de 'Insertar un nombre' se encuentra vacío. Por favor, añade algo.");
+  }
+}
+
+ej6Btn.addEventListener('click', addName);
+
+ej6Random.addEventListener('click', function() {
+  if (listaNombres.length === 0) {
+    alert("Aún no has introducido nombres en la lista.");
+    return;
+  }
+
+  let indAleatorio = Math.floor(Math.random() * listaNombres.length);
+  let nombreAleatorio = listaNombres[indAleatorio];
+
+  let nombres = ej6Lista.getElementsByTagName('li');
+  
+  // Creamos un Array con los items 'li' de la lista y la recorremos con un for each para quitar la clase selected de una posible selección aleatoria anterior.
+  // Usamos una función en flecha buscando que el código sea más compacto y ligero.
+  Array.from(nombres).forEach(nombre => {
+    nombre.classList.remove('selected');
+  })
+
+  //Vaciamos también el mensaje antes de marcar el siguiente.
+  ej6Name.innerHTML = "";
+
+  // Cambiamos la clase del elemento seleccionado a "selected".
+  nombres[indAleatorio].classList.add('selected');
+
+  //Introducimos el mensaje debajo del botón.
+  ej6Name.innerHTML = `El nombre seleccionado es: <b>${nombreAleatorio}</b>.`;
+})
