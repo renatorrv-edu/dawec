@@ -87,7 +87,7 @@ function toggleBox() {
   let toggleBtn = document.getElementById('toggleBtn');
   let box = document.getElementById('box');
 
-  if (box.style.display === "none" || box.style.display === "") {
+  if (box.style.display === "none") {
     box.style.display = "block";
     toggleBtn.innerHTML = "Ocultar Caja";
   } else {
