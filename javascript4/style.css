@@ -178,13 +178,16 @@ li:last-child {
 
 .ej5 {
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
+  background-color: #f4f4f4;
+  margin: auto;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #taskContainer2 {
@@ -193,16 +196,19 @@ li:last-child {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin: auto;
 }
 
-.inputContainer2 {
+.ej5 h1 {
+  text-align: center;
+}
+
+.ej5 .inputContainer {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-input[type="text"] {
+.ej5 input[type="text"] {
   flex: 1;
   padding: 10px;
   margin-right: 10px;
@@ -212,7 +218,7 @@ input[type="text"] {
 }
 
 .ej5 button {
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #4caf50;
   color: #fff;
   border: none;
@@ -252,7 +258,7 @@ input[type="text"] {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .ej5 .deleteBtn:hover {
   background-color: #d32f2f;
-}
-
+}  

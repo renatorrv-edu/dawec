@@ -101,3 +101,30 @@ toggleBtn.addEventListener('click', toggleBox);
 
 // Ejercicio 5
 
+let ej5Input = document.getElementById('newTaskInput');
+let ej5Btn = document.getElementById('addTaskBtn');
+let ej5Lista = document.getElementById('taskList');
+
+function addTask() {
+  if (ej5Input.value.trim() !== "") { //Verificamos que el campo de texto no esté vacío y no tenemos en cuenta los espacios en blanco de más.
+    let li = document.createElement('li');
+    li.textContent = ej5Input.value;
+
+    let deleteBtn = document.createElement('button');
+    deleteBtn.className = 'deleteBtn';
+    deleteBtn.textContent = 'X';
+
+    li.appendChild(deleteBtn);
+    ej5Lista.appendChild(li);
+
+    deleteBtn.addEventListener('click', function() {
+      ej5Lista.removeChild(li);
+    })
+
+    ej5Input.value = "";
+  } else {
+    alert("El campo de 'Insertar una nueva tarea' se encuentra vacío. Por favor, añade algo.");
+  }
+}
+
+ej5Btn.addEventListener('click', addTask);
