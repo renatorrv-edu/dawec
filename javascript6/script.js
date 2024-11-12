@@ -93,6 +93,8 @@ boton3.addEventListener('click', function() {
   console.log(mensaje + "\nSuma total de todos los salarios: " + sum);
 });
 
+// Ejercicio 4
+
 let boton4 = document.getElementById('ejercicio4');
 
 boton4.addEventListener('click', function() {
