@@ -2,12 +2,17 @@
 
 let form = document.getElementById('form');
 let formName = document.getElementById('name');
-let formEMail = document.getElementById('email');
+let formEmail = document.getElementById('email');
 let formPassword = document.getElementById('password')
 let formRepeatedPassword = document.getElementById('repeated_password')
 let formCaptcha = document.getElementById('captcha')
 let captchaOperacion = document.getElementById('captchaOperacion');
 let resultadoCaptcha = generarCaptcha();
+
+// Expresiones regulares a usar
+let emailRegEx = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+let passwordRegEx = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);
+
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -34,15 +39,48 @@ function validarExito(mensaje, input) {
 
 function validarInputs() {
   let formNameError = document.getElementById('nameError');
-  let formEMailError = document.getElementById('emailError');
+  let formEmailError = document.getElementById('emailError');
   let formPasswordError = document.getElementById('passwordError')
   let formRepeatedPasswordError = document.getElementById('repeated_passwordError')
   let formCaptchaError = document.getElementById('captchaError')
   let captchaOperacionError = document.getElementById('captchaOperacionError');
   
-  if (!formName) {
-
+  if (!formName.value) {
+    validarError(formNameError, formName);
+    formNameError.textContent = 'El campo "Nombre" no puede estar vacío.';
+    formName.focus({ focusVisible: true });
+    return;
   } else {
+    validarExito(formNameError, formName);
+    formNameError.textContent = '';
+  }
+
+  if (!formEmail.value) {
+    validarError(formEmailError, formEmail);
+    formEmailError.textContent = 'El campo "Email" no puede estar vacío.';
+    formEmail.focus({ focusVisible: true });
+    return;
+  } else if (!emailRegEx.test(formEmail.value)) {
+    validarError(formEmailError, formEmail);
+    formEmailError.textContent = 'El campo "Email" debe contener un email válido.';
+    formEmail.focus({ focusVisible: true });
+    return;
+  } else if (emailRegEx.test(formEmail.value)) {
+    validarExito(formEmailError, formEmail);
+    formEmailError.textContent = '';
+  }
+
+  if (!formPassword.value) {
+    validarError(formPasswordError, formPassword);
+    formPasswordError.textContent = 'El campo "Contraseña" no puede estar vacío.';
+    formPassword.focus({ focusVisible: true });
+    return;
+  } else if (!passwordRegEx.test(formPassword.value)) {
+    validarError(formPasswordError, formPassword);
+    formPasswordError.textContent = 'El "Email" debe ser un email válido.';
+    formEmail.focus({ focusVisible: true });
+    return;
+  } else if (passwordRegEx.test(formPassword.value)) {
 
   }
 
