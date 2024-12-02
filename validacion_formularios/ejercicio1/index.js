@@ -92,7 +92,7 @@ function validarExito(mensaje, input) {
   input.classList.add('is-valid');
 }
 
-// A partir de aquí tenemos todos los Even Listeners de cada campo. Se activarán en cuanto se salga de ellos.
+// A partir de aquí tenemos todos los Event Listeners de cada campo. Se activarán en cuanto se salga de ellos.
 formName.addEventListener('blur', function() {
   if (!formName.value) {
     validarError(formNameError, formName);
@@ -159,7 +159,7 @@ formCaptcha.addEventListener('blur', function() {
     validarExito(formCaptchaError, formCaptcha);
     formCaptchaError.textContent = '';
   }
-  verificarCampos(); // Verifica los campos después de cada validación
+  verificarCampos();
 });
 
 formAceptarTerminos.addEventListener('change', function() {
