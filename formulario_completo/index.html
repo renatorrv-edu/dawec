@@ -7,86 +7,168 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="index.js" defer></script>
   <style>
-    body {background-color: #7393B3;}
+    body {
+      background-color: #7393B3;
+    }
   </style>
 </head>
 <body>
   <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card shadow mt-5">
-            <div class="card-body">
-              <h2 class="text-center mb-2">Formulario</h2>
-              <form>
-                <fieldset class="border p-3">
-                  <legend class="w-auto">Información Personal</legend>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <label for="name">* Nombre</label>
-                      <input type="text" class="form-control" id="name"">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label for="first_lastname">* Primer apellido</label>
-                      <input type="text" class="form-control" id="first_lastname">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label for="second_lastname">* Segundo apellido</label>
-                      <input type="text" class="form-control" id="second_lastname">
-                    </div>
+      <div class="col-md-8">
+        <div class="card shadow mt-5">
+          <div class="card-body">
+            <h2 class="text-center mb-2">Formulario</h2>
+            <form>
+              <fieldset class="border p-2 pl-3 mt-4 mb-2">
+                <legend class="w-auto">Información Personal</legend>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="name">* Nombre</label>
+                    <input type="text" class="form-control" id="name">
                   </div>
-                  <div class="form-group">
-                    <label for="address">Dirección</label>
-                    <input type="text" class="form-control" id="address" placeholder="Calle o Plaza, Número y Piso">
+                  <div class="form-group col-md-4">
+                    <label for="first_lastname">* Primer apellido</label>
+                    <input type="text" class="form-control" id="first_lastname">
                   </div>
-                  <div class="form-group">
-                    <label for="phone">* Teléfono</label>
-                    <input type="text" class="form-control" id="phone" placeholder="123 33 33 33">
+                  <div class="form-group col-md-4">
+                    <label for="second_lastname">* Segundo apellido</label>
+                    <input type="text" class="form-control" id="second_lastname">
                   </div>
-                  <div class="form-group">
-                    <label for="email">* Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="ejemplo@ejemplo.com">
-                  </div>
-                  <div class="form-group">
-                    <label for="password">* Contraseña</label>
-                    <input type="password" class="form-control" id="password">
-                  </div>
-                  <p class="mb-1">Sexo</p>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault1" value="hombre">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Varón
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault2" value="mujer">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      Mujer
-                    </label>
-                  </div>
-                </fieldset>
-                <fieldset class="border p-2 pl-3 mt-4 mb-2">
-                  <legend class="w-auto">Nivel de estudios e intereses</legend>
-                  <p class="mb-1">Nivel de estudios: </p>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault1" value="hombre">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Varón
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault2" value="mujer">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      Mujer
-                    </label>
-                  </div>
-                </fieldset>
-                  <small class="text-muted">Los campos marcados con * son obligatorios</small>
-                  <button type="submit" class="btn btn-primary">Sign in</button>
-                </form>
-              </div>
+                </div>
+                <div class="form-group">
+                  <label for="address">Dirección</label>
+                  <input type="text" class="form-control" id="address" placeholder="Calle o Plaza, Número y Piso">
+                </div>
+                <div class="form-group">
+                  <label for="phone">* Teléfono</label>
+                  <input type="text" class="form-control" id="phone" placeholder="123 33 33 33">
+                </div>
+                <div class="form-group">
+                  <label for="email">* Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="ejemplo@ejemplo.com">
+                </div>
+                <div class="form-group">
+                  <label for="password">* Contraseña</label>
+                  <input type="password" class="form-control" id="password">
+                </div>
+                <p class="mb-1">Sexo</p>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault1" value="hombre">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Varón
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault2" value="mujer">
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Mujer
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="border p-2 pl-3 mt-4 mb-2">
+                <legend class="w-auto">Nivel de estudios e intereses</legend>
+                <p class="mb-2">Nivel de estudios: </p>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="nivel_estudios" id="nivel_estudios_1" value="certificado_escolar">
+                  <label class="form-check-label" for="nivel_estudios_1">
+                    Certificado escolar
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="nivel_estudios" id="nivel_estudios_2" value="graduado_eso">
+                  <label class="form-check-label" for="nivel_estudios_2">
+                    Graduado en E.S.O.
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="nivel_estudios" id="nivel_estudios_3" value="bachiller_fp">
+                  <label class="form-check-label" for="nivel_estudios_3">
+                    Bachiller - Formación Profesional
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="nivel_estudios" id="nivel_estudios_4" value="diplomado">
+                  <label class="form-check-label" for="nivel_estudios_4">
+                    Diplomado
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="nivel_estudios" id="nivel_estudios_5" value="licenciado_doctorado">
+                  <label class="form-check-label" for="nivel_estudios_5">
+                    Licenciado o Doctorado
+                  </label>
+                </div>
+                <p class="mb-2 mt-3">Recibir artículos sobre los siguientes temas: </p>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" value="musica" id="articulos_1">
+                  <label class="form-check-label" for="articulos_1">
+                    Música
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" value="deportes" id="articulos_2">
+                  <label class="form-check-label" for="articulos_2">
+                    Deportes
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" value="cine" id="articulos_3">
+                  <label class="form-check-label" for="articulos_3">
+                    Cine
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" value="libros" id="articulos_4">
+                  <label class="form-check-label" for="articulos_4">
+                    Libros
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" value="ciencia" id="articulos_5">
+                  <label class="form-check-label" for="articulos_5">
+                    Ciencia
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="border p-2 pl-3 mt-4 mb-2">
+                <legend class="w-auto">Datos sobre la revista</legend>
+                <p class="mb-2">Frecuencia con la que se recibirá la revista: </p>
+                <select class="form-control" name="frecuencia" id="frecuencia">
+                  <option value="semanal">Semanal</option>
+                  <option value="mensual">Mensual</option>
+                  <option value="trimestral">Trimestral</option>
+                  <option value="bianual">Bianual</option>
+                </select>
+                <p class="mb-2 mt-3">Puedes mandar tu artículo sobre cualquier tema de los que tratamos.</p> 
+                <p class="mb-2">Nosotros lo valoraremos para que pueda ser publicado.</p>
+                <div class="form-group mt-4 d-flex align-items-center" style="white-space: nowrap;">
+                  <label for="exampleFormControlFile1" class="mb-0 mr-4">Mandar artículo: </label>
+                  <input type="file" class="form-control-file" id="articulo_archivo">
+                </div>
+                <p class="mb-2 mt-4">Si deseas mandar simplemente una opinión o comentario, escríbelo aquí: </p>
+                <div class="form-group">
+                  <label for="comentario" class="mb-2 mt-3">* Comentario</label>
+                  <textarea class="form-control" id="comentario" rows="3" placeholder="Escribe aquí tu comentario" style="resize: none;"></textarea>
+                </div>
+              </fieldset>
+              <fieldset class="border p-2 pl-3 mt-4 mb-2">
+                <legend class="w-auto">Comenzar de nuevo</legend>
+                <p class="mb-2">Borrar todos los datos del formulario y volver a empezar: </p>
+                <button type="submit" class="btn btn-danger mt-2 mb-2" id="borrar_formulario">Borrar todo</button>
+              </fieldset>
+              <fieldset class="border p-2 pl-3 mt-4 mb-3">
+                <legend class="w-auto">Enviar</legend>
+                <p class="mb-2">Enviar formulario por correo electrónico:</p>
+                <p class="mb-2">Al pulsar en el botón, se abrirá la página de envío de correo. Allí pulsa en "enviar".</p>
+                <button type="submit" class="btn btn-primary mt-2 mb-2" id="enviar_formulario">Enviar por correo</button>
+              </fieldset>
+              <small class="text-muted ml-1">Los campos marcados con * son obligatorios</small>
+            </form>
           </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </body>
 </html>
