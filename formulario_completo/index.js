@@ -180,6 +180,12 @@ function validacion() {
 
   if (esValido) {
     alert('Datos enviados correctamente');
+    
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
     form.reset();
     return true;
   } else {
