@@ -25,15 +25,15 @@
                 <div class="form-row">
                   <div class="form-group col-md-4">
                     <label for="name">* Nombre</label>
-                    <input type="text" class="form-control" id="name" required>
+                    <input type="text" class="form-control" id="name">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="first_lastname">* Primer apellido</label>
-                    <input type="text" class="form-control" id="first_lastname" required>
+                    <input type="text" class="form-control" id="first_lastname">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="second_lastname">* Segundo apellido</label>
-                    <input type="text" class="form-control" id="second_lastname" required>
+                    <input type="text" class="form-control" id="second_lastname">
                   </div>
                 </div>
                 <div class="form-group">
@@ -42,25 +42,25 @@
                 </div>
                 <div class="form-group">
                   <label for="phone">* Teléfono</label>
-                  <input type="text" class="form-control" id="phone" placeholder="123 33 33 33"required>
+                  <input type="text" class="form-control" id="phone" placeholder="123 33 33 33">
                 </div>
                 <div class="form-group">
                   <label for="email">* Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="ejemplo@ejemplo.com" required>
+                  <input type="text" class="form-control" id="email" placeholder="ejemplo@ejemplo.com"> <!--Dejo este input como "text" para poder hacer la validación con JS.-->
                 </div>
                 <div class="form-group">
                   <label for="password">* Contraseña</label>
-                  <input type="password" class="form-control" id="password" required>
+                  <input type="password" class="form-control" id="password">
                 </div>
                 <p class="mb-1">Sexo</p>
                 <div class="form-check mb-1">
-                  <input class="form-check-input" type="radio" name="sex" id="sex_v" value="hombre">
+                  <input class="form-check-input" type="radio" name="sex" id="varon" value="hombre" checked>
                   <label class="form-check-label" for="varon">
                     Varón
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="sex" id="sex_m" value="mujer">
+                  <input class="form-check-input" type="radio" name="sex" id="mujer" value="mujer">
                   <label class="form-check-label" for="mujer">
                     Mujer
                   </label>
@@ -149,7 +149,8 @@
                 <p class="mb-2 mt-4">Si deseas mandar simplemente una opinión o comentario, escríbelo aquí: </p>
                 <div class="form-group">
                   <label for="comentario" class="mb-2 mt-3">* Comentario</label>
-                  <textarea class="form-control" id="comentario" rows="3" placeholder="Escribe aquí tu comentario" style="resize: none;" required></textarea>
+                  <textarea class="form-control" id="comentario" rows="3" placeholder="Escribe aquí tu comentario" style="resize: none;"></textarea>
+                  <small class="text-muted ml-1 mb-2">Máximo 200 caracteres</small>
                 </div>
               </fieldset>
               <fieldset class="border p-2 pl-3 mt-4 mb-2">
