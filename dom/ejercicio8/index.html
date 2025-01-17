@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej8</title>
+</head>      
+<body>
+    <p>
+        <label for="valor1">Ingrese primer valor:</label>
+        <input type="number" id="valor1" />
+    </p>
+    <p>
+        <label for="valor2">Ingrese segundo valor:</label>
+        <input type="number" id="valor2" />
+    </p>
+    <p>
+        <select id="operacion">
+        <option value="suma">Sumar</option>
+        <option value="resta">Restar</option>
+        </select>
+    </p>
+    <p>
+        <input type="button" value="Operar" id="calculo" onclick="calculo();"/>
+    </p>
+    <p id="resultado1"></p>
+    <select multiple="multiple" id="operaciones">
+        <option value="suma">Sumar</option>
+        <option value="resta">Restar</option>
+    </select>
+    <p>
+        <input type="button" value="Operar" id="calculomultiple" onclick="calculoAdicional();"/>
+    </p>
+    <p id="resultado2"></p>
+</body>
+
+<script>
+  let resultado = document.getElementById('resultado1');
+  let resultado2 = document.getElementById('resultado2');
+
+  function calculo() {
+    let mensaje = '';
+    resultado.innerHTML = '';
+
+    let num1 = parseFloat(document.getElementById('valor1').value);
+    let num2 = parseFloat(document.getElementById('valor2').value);
+    let calculo = document.getElementById('operacion').value;
+
+    if (calculo === 'suma') {
+      mensaje += "Resultado de la suma = " + (num1 + num2);
+    } else {
+      mensaje += "Resultado de la resta = " + (num1 - num2);
+    }
+
+    resultado.innerText = mensaje;
+  }
+
+  function calculoAdicional() {
+    let mensaje = '';
+    resultado2.innerHTML = '';
+
+    let num1 = parseFloat(document.getElementById('valor1').value);
+    let num2 = parseFloat(document.getElementById('valor2').value);
+    let operaciones = document.getElementById('operaciones');
+
+    /*En este bucle for vamos a iterar sobre todas las opciones del select "operaciones". Teniendo en cuenta la opción seleccionada y su valor
+    se sumará o restará y se añadirá a la cadena "mensaje".*/
+
+    for (let i = 0; i < operaciones.options.length; i++) {
+      if (operaciones.options[i].selected) {
+        let operacion = operaciones.options[i].value;
+        
+        if (operacion === 'suma') {
+          mensaje += "El resultado de la suma es = " + (num1 + num2) + "\n";
+        } else if (operacion === 'resta') {
+          mensaje += "El resultado de la resta es = " + (num1 - num2);
+        }
+      }
+    }
+
+    resultado2.innerText = mensaje;
+  }
+
+</script>
+
+</html>
