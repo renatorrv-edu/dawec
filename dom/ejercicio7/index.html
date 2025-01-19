@@ -25,35 +25,34 @@
     <input type="button" value="Operar" id="calculo" onclick="operar();"/>
   </p>
   <p id="resultado"></p>
+
+  <script>
+    let resultado = document.getElementById('resultado');
+  
+    function operar() {
+      resultado.innerHTML = '';
+      let sumar = document.getElementById('suma').checked;
+      let restar = document.getElementById('resta').checked;
+      let mensaje = '';
+  
+      num1 = parseFloat(document.getElementById('valor1').value);
+      num2 = parseFloat(document.getElementById('valor2').value);
+  
+      if (sumar) {
+        mensaje += "Resultado de la suma = " + (num1 + num2) + "\n";
+      }
+  
+      if (restar) {
+        mensaje += "Resultado de la resta = " + (num1 - num2);
+      }
+  
+      if (!sumar && !restar) {
+        mensaje += "Por favor, marca una de las opciones de operación.";
+      }
+  
+      resultado.innerText = mensaje;
+    }
+  </script>
   
 </body>
-
-<script>
-  let resultado = document.getElementById('resultado');
-
-  function operar() {
-    resultado.innerHTML = '';
-    let sumar = document.getElementById('suma').checked;
-    let restar = document.getElementById('resta').checked;
-    let mensaje = '';
-
-    num1 = parseFloat(document.getElementById('valor1').value);
-    num2 = parseFloat(document.getElementById('valor2').value);
-
-    if (sumar) {
-      mensaje += "Resultado de la suma = " + (num1 + num2) + "\n";
-    }
-
-    if (restar) {
-      mensaje += "Resultado de la resta = " + (num1 - num2);
-    }
-
-    if (!sumar && !restar) {
-      mensaje += "Por favor, marca una de las opciones de operación.";
-    }
-
-    resultado.innerText = mensaje;
-  }
-</script>
-
 </html>

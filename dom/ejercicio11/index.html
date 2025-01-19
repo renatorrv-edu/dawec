@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej11</title>
+</head>      
+<body>
+  <ul id="lista"></ul>
+  <br>
+  <input type="button" id="boton" value="Nuevo número">
+
+    <script>
+      const boton = document.getElementById('boton');
+      const lista = document.getElementById('lista');
+      
+      boton.addEventListener('click', function() {
+        let rng = Math.floor(Math.random() * 1000);
+        
+        let li = document.createElement('li');
+        let textoLi = document.createTextNode(rng);
+
+        li.appendChild(textoLi);
+
+        lista.appendChild(li);
+      })
+
+      document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'Enter') {
+                boton.click();
+            }
+        });
+    </script>
+</body>
+  
+</html>

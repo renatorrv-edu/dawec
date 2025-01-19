@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej10</title>
+</head>      
+<body>
+    <form action="#" method="post" id="formulario">
+      <p>
+        <label for="usuario">Ingrese email:</label>
+        <input type="email" id="email" />
+        <span id="resultado1"></span>
+      </p>
+      <p>
+        <label for="sitio">Ingrese sitio web:</label>
+        <input type="url" id="url" />
+        <span id="resultado2"></span>
+      </p>
+      <p>
+        <input type="button" value="confirmar" id="confirmar"/>
+      </p>
+    </form>
+  
+    <script>
+      const confirmar = document.getElementById('confirmar');
+      const resultado1 = document.getElementById('resultado1');
+      const resultado2 = document.getElementById('resultado2');
+      
+      const regexEmail = /^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/;
+      const regexUrl = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)([\/\w-]*)*\/?(\?.*)?(#.*)?$/;
+
+      confirmar.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const url = document.getElementById('url').value;
+
+        resultado1.innerText = '';
+        resultado2.innerText = '';
+
+        if (regexEmail.test(email)) {
+          resultado1.innerText = 'Correcto 	✔';
+        } else {
+          resultado1.innerText = 'Por favor, inserte un email válido.';
+        }
+
+        if (regexUrl.test(url)) {
+          resultado2.innerText = 'Correcto ✔';
+        } else {
+          resultado2.innerText = 'Por favor, inserte una URL válida.'
+        }
+
+      })
+    </script>
+</body>
+  
+</html>

@@ -13,23 +13,23 @@
 	<p>4. Vero aperiam, ipsum unde doloribus minima ab, sint nulla molestiae autem dicta ad laborum voluptas labore et officia sapiente voluptatibus perferendis voluptatem optio veritatis placeat consequatur aspernatur? Corporis, impedit, pariatur.</p>
 	<p>5. Distinctio quas, impedit inventore quod! Incidunt ab in, quidem deleniti repellendus odit quisquam, quis pariatur, doloribus adipisci culpa nesciunt! Vero, soluta maxime provident minus voluptates esse, distinctio culpa labore deserunt.</p>
 
-<script>
-  let parrafos = document.querySelectorAll('p');
+  <script>
+    let parrafos = document.querySelectorAll('p');
 
-  let a = document.createElement('a');
-  let textoA = document.createTextNode(' + info');
-  a.appendChild(textoA);
-  a.href = 'http://www.iesromerovargas.com/';
-  parrafos[2].appendChild(a);
+    let a = document.createElement('a');
+    let textoA = document.createTextNode(' + info');
+    a.appendChild(textoA);
+    a.href = 'http://www.iesromerovargas.com/';
+    parrafos[2].appendChild(a);
 
-  let nuevoParrafo = document.createElement('p');
-  nuevoParrafo.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem esse dicta alias dolore odio odit iusto facilis harum tempora labore, rem doloribus dolorum consequatur modi praesentium commodi blanditiis quo cupiditate.";
-  nuevoParrafo.style.color = 'red';
+    let nuevoParrafo = document.createElement('p');
+    nuevoParrafo.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem esse dicta alias dolore odio odit iusto facilis harum tempora labore, rem doloribus dolorum consequatur modi praesentium commodi blanditiis quo cupiditate.";
+    nuevoParrafo.style.color = 'red';
 
-  parrafos[2].parentNode.insertBefore(nuevoParrafo, parrafos[3]);
+    parrafos[2].parentNode.insertBefore(nuevoParrafo, parrafos[3]);
 
-  parrafos[1].parentNode.removeChild(parrafos[1]);
-</script>
+    parrafos[1].parentNode.removeChild(parrafos[1]);
+  </script>
 	
 </body>
 </html>
