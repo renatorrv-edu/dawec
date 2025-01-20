@@ -27,22 +27,39 @@
 
         fila.appendChild(celda);
 
-        if (casiPrimo(num)) {
-          //PINTAR
-        }
-
         num++;
       }
     }
 
-    function casiPrimo(num) {
-      //variable coinceidencias
-      
-      if (num) { //RELLENAR
+    boton.addEventListener('click', function (e) {
+      let celdas = tabla.getElementsByTagName('td');
 
+      for (let i = 0; i < celdas.length; i++) {
+        if (casiPrimo(parseInt(celdas[i].innerHTML))) {
+          celdas[i].style.backgroundColor = '#FFEE8C';
+          celdas[i].style.fontWeight = 'bold';
+        }
       }
-    }
 
+    })
+
+    function casiPrimo(num) {
+      /*Esta función se encargará de recoger un número y comprobar si es casi primo. Esto quiere decir que es solo divisible entre tres números.
+      Se recibe el número y se va comprobando si es divisible entre todos los números desde 1 hasta él mismo. Luego devuelve true o false dependiendo de si
+      el número de divisores es tres.*/
+
+      // Inicializamos esta variable en 1, ya que todos los números son divisibles entre 1. 
+      let divisores = 1;
+      
+      for (let i = 2; i <= num; i++) {
+        if (num % i == 0) {
+          divisores++;
+        }
+      }
+
+      //Esto devolverá un valor booleano.
+      return divisores == 3;
+    }
   </script>
 </body>
 </html>
