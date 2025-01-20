@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,41 @@
 </head>
 <body>
   <input type="button" value="Calcular números casi primos" id="boton" />
+  <br><br>
+  <table border ="1" style="border-collapse: collapse; text-align: center;" id="tabla"></table>
   <script>
-    // Script
+    const tabla = document.getElementById('tabla');
+    const boton = document.getElementById('boton');
+
+    let num = 1;
+
+    for (let tr = 0; tr < 100; tr++) {
+      let fila = document.createElement('tr');
+      tabla.appendChild(fila);
+
+      for (let td = 0; td < 100; td++) {
+        let celda = document.createElement('td');
+        celda.innerHTML = num;
+        celda.style.padding = '5px';
+
+        fila.appendChild(celda);
+
+        if (casiPrimo(num)) {
+          //PINTAR
+        }
+
+        num++;
+      }
+    }
+
+    function casiPrimo(num) {
+      //variable coinceidencias
+      
+      if (num) { //RELLENAR
+
+      }
+    }
+
   </script>
 </body>
 </html>
