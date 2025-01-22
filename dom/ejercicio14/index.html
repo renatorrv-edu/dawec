@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ej14</title>
+  <style>
+    .oculto {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <p onclick="ocultar(this);" ondblclick="eliminar(this);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit maxime numquam iste unde earum repellendus voluptates, tempore officiis necessitatibus vel qui sint corrupti a voluptate laborum, commodi consectetur veritatis excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, aperiam. Modi, dolor beatae eum dolores odio, enim, magnam unde consequatur dicta nemo esse. Facere magni asperiores exercitationem, mollitia in odit?. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni earum ex ducimus doloremque sed, minima, velit quod, at laborum voluptatum dolores? Minus fuga cupiditate rem nam corporis ipsum, perspiciatis enim.</p>
+  <p onclick="ocultar(this);" ondblclick="eliminar(this);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem maiores doloribus, nobis quibusdam fugit laudantium repudiandae, quo impedit voluptas pariatur eveniet sapiente. Deleniti dolorem vero repellendus nihil! Officia, maxime deserunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, magni sit. Velit laudantium modi vitae cupiditate, facilis, repellat rerum odit fugit temporibus ut unde inventore? Nesciunt eos molestiae facilis similique?
+  Eos, eaque a sunt repudiandae, numquam quod alias aliquid sequi incidunt voluptatem, voluptatum nobis? In necessitatibus, id voluptates quam voluptatibus fugit ullam blanditiis provident quis illo rerum. Molestias, enim veritatis?
+  Quasi dolore asperiores quos ratione minima numquam autem, voluptas omnis optio blanditiis quam earum animi maiores fuga, quae ducimus molestias facere id nam explicabo laborum. Dolore facilis quis accusantium harum.</p>
+  <p onclick="ocultar(this);" ondblclick="eliminar(this);">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere necessitatibus dolore fugit, nesciunt veniam dolorum eaque ducimus eveniet? Voluptate suscipit officiis recusandae sequi nulla nobis eveniet necessitatibus mollitia blanditiis atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. In tenetur eum molestiae. Ullam suscipit placeat non atque inventore distinctio consequuntur perferendis quod, illo voluptate repellendus dolorem corporis, laborum exercitationem eaque?
+  Odio consequuntur impedit id voluptates repellendus ad sed commodi laboriosam obcaecati debitis nihil possimus, delectus illum quas. Quas consequatur esse id consequuntur. Numquam recusandae quas ipsum aliquam quibusdam, officia esse?
+  Accusamus, recusandae qui incidunt minima dolorum dignissimos omnis culpa praesentium deserunt rem placeat illo id repellendus impedit asperiores dolorem optio laudantium eius quaerat cumque quam repellat sit soluta neque? Molestiae.</p> 
+  <input type="button" id="reaparecer" value="Reaparecer" onclick="reaparecer();">
+  <script>
+    function ocultar(p) {
+      p.classList.add('oculto');
+    }
+
+    function eliminar(p) {
+      p.remove();
+    }
+
+    function reaparecer() {
+      let ocultos = document.querySelectorAll('.oculto');
+
+      ocultos.forEach(p => p.classList.remove('oculto'));
+    }
+  </script>
+</body>
+</html>

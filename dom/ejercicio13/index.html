@@ -4,20 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ej13</title>
+  <style>
+    input {
+      margin-right: 10px; 
+      margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin: 10px 5px;
+    }
+  </style>
 </head>
 <body>
-  
+  <input type="button" id="mark" value="Marcar todos" onclick="mark();"> <input type="button" id="unmark" value="Desmarcar todos" onclick="unmark();">
   <br>
   <div id="checkboxes"></div>
   <script>
     const checkboxesDiv = document.getElementById('checkboxes');
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 1; i <= 100; i++) {
       let checkbox = document.createElement('input');
       let num = Math.floor(Math.random() * 1000);
+      let br = document.createElement('br');
 
-      checkbox.innerText(num)
+      checkbox.setAttribute('type', 'checkbox');
+      checkbox.value = num;
+
+      let textNum = document.createTextNode(num);
+
       checkboxesDiv.appendChild(checkbox);
+      checkboxesDiv.appendChild(textNum);
+
+      //Este condicional se encarga de añadir un salto de línea cada 10 checkboxes, para hacer 10 filas de 10.
+      if (i % 10 == 0) {
+        checkboxesDiv.appendChild(br);
+      }
+    }
+
+    function mark() {
+      let checkboxesList = checkboxesDiv.querySelectorAll('input[type="checkbox"]');
+
+      for (let i = 0; i < checkboxesList.length; i++) {
+        checkboxesList[i].checked = true;
+      }
+    }
+
+    function unmark() {
+      let checkboxesList = checkboxesDiv.querySelectorAll('input[type="checkbox"]');
+
+      for (let i = 0; i < checkboxesList.length; i++) {
+        checkboxesList[i].checked = false;
+      }
     }
   </script>
 </body>
