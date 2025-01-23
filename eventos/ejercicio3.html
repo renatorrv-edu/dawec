@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Ejercicio 16 - Informaci�n sobre eventos</title>
+  <style type="text/css">
+    body {font-family: arial, helvetica;}
+    #info {width:160px; border:thin solid silver; padding:.5em; position:fixed;}
+    #info h1 {margin: 0;}
+  </style>
+  <script defer>
+  function informacion(elEvento) {
+    /* Recibimos las coordenadas del click y la resolución de la pantalla y la enviamos a determinarPosicion().
+    Con el array que recibimos de determinarPosicion llamamos a la función muestraInformacion() para mostrarla en pantalla, dentro del div "info".*/
+
+    var evento = elEvento || window.event;
+    // Desestructuramos el Array en dos variables.
+    let [ancho, alto] = tamanoVentanaNavegador();
+    let coordX = elEvento.clientX;
+    let coordY = elEvento.clientY;
+
+    let mensaje = determinarPosicion(ancho, alto, coordX, coordY);
+    
+    muestraInformacion(mensaje);
+  }
+
+  function muestraInformacion(mensaje) {
+    document.getElementById("info").innerHTML = '<h3>'+mensaje[0]+'</h3>';
+    for(var i=1; i<mensaje.length; i++) {
+      document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
+    }
+  }
+
+  function tamanoVentanaNavegador(){
+    // Adaptada de http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
+    var dimensiones = [];
+    
+    if(typeof(window.innerWidth) == 'number') {
+      // No es IE
+      dimensiones = [window.innerWidth, window.innerHeight];
+    } else if(document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+      //IE 6 en modo estandar (no quirks)
+      dimensiones = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+    } else if(document.body && (document.body.clientWidth || document.body.clientHeight)) {
+      //IE en modo quirks
+      dimensiones = [document.body.clientWidth, document.body.clientHeight];
+    }
+    
+    return dimensiones;
+  }
+
+  function determinarPosicion(ancho, alto, coordX, coordY) {
+    /* Esta función se encarga de recibir el ancho y alto de la pantalla y las coordenadas del click.
+    A continuación calculamos, usando las mitades del ancho y alto la posición del click. */
+    
+    let mensaje = ["Zona del click: "];
+    let posicion = '';
+
+    if (coordX < ancho / 2) {
+      posicion += 'Izquierda ';
+    } else {
+      posicion += 'Derecha ';
+    }
+
+    if (coordY < alto / 2) {
+      posicion += 'arriba';
+    } else {
+      posicion += 'abajo';
+    }
+
+    mensaje.push(posicion);
+
+    return mensaje;
+  }
+
+  document.onclick = informacion;
+  </script>
+</head>
+<body>
+<div id="info"></div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="690b4bc2c0cb978ecc344604-|49" defer></script></body>
+</html>
