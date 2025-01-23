@@ -7,3 +7,5 @@
 20/12/24 - Terminado el ejercicio de listas desplegables dependientes.
 
 22/01/25 - Terminada lista de ejercicios de DOM - JavaScript.
+
+23/01/25 - Terminada lista de ejercicios de Eventos.
